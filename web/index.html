@@ -5,18 +5,17 @@
     (function() {
         document.addEventListener('DOMContentLoaded', function() {
             var ul = document.querySelector('ul');
-            // ホスト名、URLの取得
-            var li1 = document.createElement('li');
-            li1.innerHTML = "ホスト名: " + window.location.hostname;
-            ul.appendChild(li1);
-            var li2 = document.createElement('li');
-            li2.innerHTML = "URL: " + window.location.href;
-            ul.appendChild(li2);
+            // URLの取得
+            var li = document.createElement('li');
+            li.innerHTML = "<strong>url:</strong> " + window.location.href;
+            ul.appendChild(li);
         });
     }());
     </script>
 </head>
 <body>
-    <ul></ul>
+    <ul>
+        <li><strong>hostname:</strong> </li>
+    </ul>
 </body>
 </html>
