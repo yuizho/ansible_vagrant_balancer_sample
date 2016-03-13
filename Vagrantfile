@@ -13,17 +13,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos6.7_minimal"
 
   config.vm.define :node1 do |node|
-    #node.vm.box = "centos7.0_minimal"
     node.vm.network :forwarded_port, guest: 22, host: 2001, id: "ssh"
     node.vm.network :forwarded_port, guest: 80, host: 8001, id: "http"
     node.vm.network :private_network, ip: "192.168.33.11"
   end
 
   config.vm.define :node2 do |node|
-    #node.vm.box = "centos7.0_minimal"
     node.vm.network :forwarded_port, guest: 22, host: 2002, id: "ssh"
     node.vm.network :forwarded_port, guest: 80, host: 8002, id: "http"
     node.vm.network :private_network, ip: "192.168.33.12"
+  end
+
+  config.vm.define :node3 do |node|
+    node.vm.network :forwarded_port, guest: 22, host: 2003, id: "ssh"
+    node.vm.network :forwarded_port, guest: 80, host: 8003, id: "http"
+    node.vm.network :private_network, ip: "192.168.33.13"
   end
 
   # Disable automatic box update checking. If you disable this, then
